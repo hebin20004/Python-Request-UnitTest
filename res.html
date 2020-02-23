@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Test Report</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 800px;
+
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+    text-align:center;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>Test Report</h1>
+<p class='attribute'><strong>Start Time:</strong> 2020-02-23 16:22:12</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:00.041030</p>
+<p class='attribute'><strong>Status:</strong> Pass 1 | Failure 1</p>
+
+<p class='description'>generated by HTMLTestRunner.</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td colspan='2'>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='failClass'>
+    <td>testDemo.TestDemo</td>
+    <td>TestDemo</td>
+    <td>2</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',2)">Detail</a></td>
+</tr>
+
+<tr id='ft1.1' class='none'>
+    <td colspan='2' class='failCase'><div class='testcase'>testB</div></td>
+    <td colspan='7' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        fail</a>
+
+    <div id='div_ft1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.1: start setUp of test.
+start testcase B
+start tearDown of test
+Traceback (most recent call last):
+  File "D:\_Test\GIT\Python-Request-UnitTest\testcase\testDemo.py", line 42, in testB
+    self.assertEqual(1, 2)  # 测试用例
+AssertionError: 1 != 2
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td colspan='2' class='none'><div class='testcase'>test_A</div></td>
+    <td colspan='7' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        pass</a>
+
+    <div id='div_pt1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.2: start setUp of test.
+start testcase A
+{"result":{"status":{"code":0,"msg":"success"},"date":"2020-02-23 16:15:20","order":[],"words":[],"data":[{"title":"\u5e73\u5c713.0\u7ea7\u5730\u9707","url":"http:\/\/www.sina.com.cn\/mid\/search.shtml?q=%E5%B9%B3%E5%B1%B13.0%E7%BA%A7%E5%9C%B0%E9%9C%87"},{"title":"\u9ec4\u5c71\u666f\u533a\u6062\u590d\u5f00\u653e","url":"http:\/\/www.sina.com.cn\/mid\/search.shtml?q=%E9%BB%84%E5%B1%B1%E6%99%AF%E5%8C%BA%E6%81%A2%E5%A4%8D%E5%BC%80%E6%94%BE"},{"title":"\u97e9\u56fd\u53d1\u751f\u8d85\u7ea7\u4f20\u64ad","url":"http:\/\/www.sina.com.cn\/mid\/search.shtml?q=%E9%9F%A9%E5%9B%BD%E5%8F%91%E7%94%9F%E8%B6%85%E7%BA%A7%E4%BC%A0%E6%92%AD"},{"title":"\u5f53\u5f53\u5458\u5de5\u786e\u8bca","url":"http:\/\/www.sina.com.cn\/mid\/search.shtml?q=%E5%BD%93%E5%BD%93%E5%91%98%E5%B7%A5%E7%A1%AE%E8%AF%8A"},{"title":"\u827a\u672f\u5bb6\u675c\u96e8\u9732\u53bb\u4e16","url":"http:\/\/www.sina.com.cn\/mid\/search.shtml?q=%E8%89%BA%E6%9C%AF%E5%AE%B6%E6%9D%9C%E9%9B%A8%E9%9C%B2%E5%8E%BB%E4%B8%96"},{"title":"\u97e6\u5fb7\u7403\u8863\u9000\u5f79\u4eea\u5f0f","url":"http:\/\/www.sina.com.cn\/mid\/search.shtml?q=%E9%9F%A6%E5%BE%B7%E7%90%83%E8%A1%A3%E9%80%80%E5%BD%B9%E4%BB%AA%E5%BC%8F"},{"title":"\u730e\u8c79\u56de\u5e94\u8c37\u6b4c\u4e0b\u67b6","url":"http:\/\/www.sina.com.cn\/mid\/search.shtml?q=%E7%8C%8E%E8%B1%B9%E5%9B%9E%E5%BA%94%E8%B0%B7%E6%AD%8C%E4%B8%8B%E6%9E%B6"},{"title":"24\u57ce\u590d\u5de5\u7387\u8d8580%","url":"http:\/\/www.sina.com.cn\/mid\/search.shtml?q=24%E5%9F%8E%E5%A4%8D%E5%B7%A5%E7%8E%87%E8%B6%8580%25"},{"title":"\u6fb3\u5927\u5229\u4e9a\u706b\u8f66\u8131\u8f68","url":"http:\/\/www.sina.com.cn\/mid\/search.shtml?q=%E6%BE%B3%E5%A4%A7%E5%88%A9%E4%BA%9A%E7%81%AB%E8%BD%A6%E8%84%B1%E8%BD%A8"},{"title":"\u5df4\u83f2\u7279\u81f4\u80a1\u4e1c\u4fe1","url":"http:\/\/www.sina.com.cn\/mid\/search.shtml?q=%E5%B7%B4%E8%8F%B2%E7%89%B9%E8%87%B4%E8%82%A1%E4%B8%9C%E4%BF%A1"}]}}
+start tearDown of test
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td colspan='2'>Total</td>
+    <td>2</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
